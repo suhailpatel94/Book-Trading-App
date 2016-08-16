@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 var jwt = require('express-jwt');
 var app = express();
 require('dotenv').load();
-
+console.log(process.env);
 
 mongoose.Promise = global.Promise;
 mongoose.connect(process.env.MONGO_URI);

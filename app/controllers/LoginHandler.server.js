@@ -1,11 +1,13 @@
 'use strict';
 
 var Usergs = require('../models/usergs.js');
-var config = require('../config/configgit.js');
 var request = require('request');
 var qs = require('querystring');
 var moment = require('moment');
 var jwt = require('jwt-simple');
+
+require('dotenv').load();
+
 
 function LoginHandler() {
 
@@ -19,7 +21,7 @@ function LoginHandler() {
 
         var payload = null;
         try {
-            payload = jwt.decode(token, config.TOKEN_SECRET);
+            payload = jwt.decode(token, process.env.TOKEN_SECRET);
         } catch (err) {
             return res.status(401).send({
                 message: err.message
@@ -39,7 +41,7 @@ function LoginHandler() {
 
     this.getUserProfile = function (req, res) {
         Usergs.findById(req.user, function (err, user) {
-           
+
             res.json(user.github.name);
             console.log(user)
         });
@@ -53,7 +55,7 @@ function LoginHandler() {
         var params = {
             code: req.body.code
             , client_id: req.body.clientId
-            , client_secret: config.GITHUB_SECRET
+            , client_secret: process.env.GITHUB_SECRET
             , redirect_uri: req.body.redirectUri
         };
 
@@ -86,7 +88,7 @@ function LoginHandler() {
                             });
                         }
                         var token = req.header('Authorization').split(' ')[1];
-                        var payload = jwt.decode(token, config.TOKEN_SECRET);
+                        var payload = jwt.decode(token, process.env.TOKEN_SECRET);
                         Usergs.findById(payload.sub, function (err, user) {
                             if (!user) {
                                 return res.status(400).send({
@@ -114,7 +116,7 @@ function LoginHandler() {
                                 token: token
                             });
                         }
-                
+
                         var user = new Usergs();
                         user.github.id = profile.id;
                         user.github.name = profile.name;
@@ -139,6 +141,6 @@ function createJWT(user) {
         , iat: moment().unix()
         , exp: moment().add(14, 'days').unix()
     };
-    return jwt.encode(payload, config.TOKEN_SECRET);
+    return jwt.encode(payload, process.env.TOKEN_SECRET);
 }
 module.exports = LoginHandler;

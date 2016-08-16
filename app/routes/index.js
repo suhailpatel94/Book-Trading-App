@@ -27,13 +27,16 @@ module.exports = function (app) {
 
     app.route('/userbooks/request').get(loginHandler.ensureAuthenticated, bookHandler.getmyRequest);
 
+   //users request
     app.route('/userbooks/request').post(loginHandler.ensureAuthenticated, bookHandler.addmyRequest);
     app.route('/userbooks/request').delete(loginHandler.ensureAuthenticated, bookHandler.deletemyRequest);
 
+   //Requests for you
     app.route('/userbooks/othersrequest').get(loginHandler.ensureAuthenticated, bookHandler.getothersRequest);
 
     app.route('/userbooks/othersrequest').delete(loginHandler.ensureAuthenticated, bookHandler.deleteothersRequest);
 
+   //Accept trade request 
     app.route('/userbooks/tradesuccess').post(loginHandler.ensureAuthenticated, bookHandler.tradesuccess);
 
 
@@ -43,20 +46,13 @@ module.exports = function (app) {
 
     app.route('/usersettings').post(loginHandler.ensureAuthenticated, bookHandler.saveusersettings);
 
-    
-
-    app.route('/logout')
-        .get(function (req, res) {
-            req.logout();
-            res.redirect('/login');
-        });
-
 
     //github login route
-    app.route('/auth/github').post(loginHandler.gitLogin);
     
+    app.route('/auth/github').post(loginHandler.gitLogin);
+
     app.route('/api/me').get(loginHandler.ensureAuthenticated, loginHandler.getUserProfile);
- 
+
 
 
 
