@@ -1,0 +1,21 @@
+<div class="container">
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h5 class="text-info">Add books</h5>
+        </div>
+
+    </div>
+
+    <div ng-click="$ctrl.addBook(book._id)" style="margin:1% 0px !important;display:inline-flex !important; margin:10px 10px !important;word-wrap: break-word !important;" class="text-xs-center" ng-repeat="book in $ctrl.allbooks">
+        <div class="img-thumbnail">
+            <img ng-src="{{book.image}}" alt="" class="center-block img-fluid" />
+
+            <div class="caption">
+                <h6 class="" style=""></h6>
+            </div>
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,20 @@
+<div class="container">
+
+
+    <div class="col-lg-8 offset-lg-2">
+
+        <ul class="list-group">
+            <li class="list-group-item" ng-repeat="request in $ctrl.othersrequest">
+                {{request.title}}
+
+                <button class="btn-medium btn-success pull-xs-right" ng-click="$ctrl.tradesuccess(request.bookId,request.title,request.requestorId)">Accept</button>
+
+                <button class="btn-medium btn-danger pull-xs-right" ng-click="$ctrl.remove(request.bookId)" style="margin-right:5px !important">Remove</button>
+
+            </li>
+
+        </ul>
+
+    </div>
+
+</div>

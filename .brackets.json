@@ -1,0 +1,21 @@
+{
+    "jscodehints.detectedExclusions": [
+        "F:/node projects/bookTrading-clementine/bower_components/jquery/src/./selector-sizzle.js",
+        "F:/node projects/bookTrading-clementine/bower_components/jquery/src/css/support.js",
+        "F:/node projects/bookTrading-clementine/bower_components/jquery/src/var/rcssNum.js",
+        "F:/node projects/bookTrading-clementine/bower_components/bootstrap/js/dist/alert.js",
+        "F:/node projects/bookTrading-clementine/bower_components/jquery/src/css/../var/pnum.js",
+        "F:/node projects/bookTrading-clementine/bower_components/bootstrap/js/dist/button.js",
+        "F:/node projects/bookTrading-clementine/public/app.module.js",
+        "F:/node projects/satellizer_auth_tutorial/public/bower_components/tether/gulpfile.js",
+        "F:/node projects/bookTrading-clementine/bower_components/jquery/src/data/var/dataPriv.js",
+        "F:/node projects/bookTrading-clementine/bower_components/jquery/src/css/adjustCSS.js",
+        "F:/node projects/bookTrading-clementine/bower_components/jquery/src/data/Data.js",
+        "F:/node projects/bookTrading-clementine/bower_components/jquery/src/deferred/exceptionHook.js",
+        "F:/node projects/bookTrading-clementine/public/user-book/user-book.component.js",
+        "F:/node projects/bookTrading-clementine/bower_components/jquery/src/event/ajax.js",
+        "F:/node projects/bookTrading-clementine/bower_components/jquery/src/event/alias.js",
+        "F:/node projects/bookTrading-clementine/bower_components/jquery/src/data/var/acceptData.js",
+        "F:/node projects/bookTrading-clementine/bower_components/jquery/src/effects/animatedSelector.js"
+    ]
+}

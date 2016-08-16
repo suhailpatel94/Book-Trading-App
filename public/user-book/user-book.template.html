@@ -1,0 +1,27 @@
+<div class="container">
+
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h5 class="text-info">My books</h5>
+        </div>
+
+    </div>
+
+
+
+
+    <div style="margin:1% 0px !important;display:inline-flex !important; margin:10px 10px !important;word-wrap: break-word !important;" class="text-xs-center" ng-repeat="book in $ctrl.mybooks">
+        <div class="img-thumbnail">
+            <img ng-src="{{book.image}}" alt="" class="center-block img-fluid" />
+
+            <div>
+                <button class="btn-small btn-danger" ng-click="$ctrl.remove(book._id)">Remove</button>
+            </div>
+        </div>
+
+    </div>
+
+
+
+</div>

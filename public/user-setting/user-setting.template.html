@@ -1,0 +1,25 @@
+<div class="container">
+
+
+    <form>
+        <fieldset class="form-group">
+            <label>Full Name</label>
+            <input ng-model="$ctrl.mysetting.fullname" type="text" class="form-control" placeholder="Enter name" required>
+
+        </fieldset>
+
+        <fieldset class="form-group">
+            <label>State</label>
+            <input ng-model="$ctrl.mysetting.state" type="text" class="form-control" placeholder="Enter State" id="" required>
+
+        </fieldset>
+
+        <fieldset class="form-group">
+            <label>City</label>
+            <input ng-model="$ctrl.mysetting.city" type="text" class="form-control" placeholder="Enter City" required>
+        </fieldset>
+
+        <button type="submit" ng-click="$ctrl.savesetting($ctrl.mysetting)" class="btn btn-primary">Submit</button>
+    </form>
+
+</div>
