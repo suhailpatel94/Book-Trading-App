@@ -4,4 +4,3 @@ design/
 node_modules/
 .brackets
 .eslintrc
-.env
